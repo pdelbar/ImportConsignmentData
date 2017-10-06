@@ -1,8 +1,15 @@
-#Source Data
-## Scope
+# Using the ImportConsignmentData API
 
-Currently, the NxtPort platform processing of CUSCAR and CUSRES messages covers
-- **import** operations
-- **first submission (9)** CUSCAR with a **positive (44)** CUSRES response.
+In order to use this API, you will need to 
+* create an account on [the NxtPort market](https://market.nxtport.eu)
+* **subscribe** to the live or sandbox edition of the ImportConsignmentData API 
+* obtain the related **subscription key**
+* request a **client ID/secret** for your application
+* implement **OAuth2 authentication** against the NxtPort Identity server
 
-_Note_: additional cases (updates sent by agent, partial approvals by customs ...) are being developed and the API documentation will be modified to reflect this.
+## Contents
+
+* [API endpoints](./endpoints.md)
+* [request structure](./requests.md)
+* [response structure](./responses.md)
+* [sandbox data](./data/samples.md)

@@ -1,0 +1,121 @@
+{
+  "Disclaimer": "Response format subject to change",
+  "References": {
+    "StayNumber": "112233",
+    "BillOfLadingId": "BMDUAL001",
+    "ImoNumber": "L1234567",
+    "FilingAgentCode": "CCCFC",
+    "SequenceNumber": "1",
+    "ParentDocument": {
+      "Id": "112233L1234567100",
+      "Type": "CUSCAR",
+      "SenderId": "CCCFC"
+    }
+  },
+  "Measurements": {
+    "TotalQuantity": "100",
+    "TotalWeight": "38000"
+  },
+  "Parties": [
+    {
+      "PartyTypeCode": "CONSIGNEE",
+      "UnstructuredAddress": "Consignee Street"
+    }
+  ],
+  "Locations": {
+    "PlaceOfOrigin": "USBAL",
+    "PlaceOfDestination": "BEANR",
+    "PlaceOfLoading": "USBAL",
+    "PlaceOfDischarge": "S123"
+  },
+  "EquipmentInformation": [
+    {
+      "EquipmentType": "CN",
+      "ContainerNumber": "CNPPI222001",
+      "SizeAndType": "45G0",
+      "EmptyFull": "5",
+      "ServiceCode1": "2",
+      "ServiceCode2": "2",
+      "GrossWeight": "24000",
+      "GrossWeightUom": "KGM",
+      "Seals": [
+        {
+          "SealPartyTypeCode": "UNKNOWN",
+          "Number": "1524578"
+        }
+      ]
+    },
+    {
+      "EquipmentType": "CN",
+      "ContainerNumber": "CNPPI222002",
+      "SizeAndType": "45G0",
+      "EmptyFull": "5",
+      "ServiceCode1": "2",
+      "ServiceCode2": "2",
+      "GrossWeight": "8000",
+      "GrossWeightUom": "KGM",
+      "Seals": [
+        {
+          "SealPartyTypeCode": "UNKNOWN",
+          "Number": "77867878"
+        }
+      ]
+    },
+    {
+      "EquipmentType": "CN",
+      "ContainerNumber": "CNPPI222003",
+      "SizeAndType": "45G0",
+      "EmptyFull": "5",
+      "ServiceCode1": "2",
+      "ServiceCode2": "2",
+      "GrossWeight": "8000",
+      "GrossWeightUom": "KGM",
+      "Seals": [
+        {
+          "SealPartyTypeCode": "UNKNOWN",
+          "Number": "452787620"
+        }
+      ]
+    }
+  ],
+  "Goods": [
+    {
+      "SequenceNumber": "1",
+      "OuterPackageType": "PK",
+      "NumberOfPackages": "80",
+      "Description": "Coffee",
+      "GoodsGrossWeight": "32000",
+      "GoodsGrossWeightUom": "KGM",
+      "CustomsStatus": "T1",
+      "RelatedEquipmentInfo": [
+        {
+          "ContainerNumber": "CNPPI222001",
+          "EquipmentQuantity": "60"
+        },
+        {
+          "ContainerNumber": "CNPPI222002",
+          "EquipmentQuantity": "20"
+        }
+      ]
+    },
+    {
+      "SequenceNumber": "2",
+      "OuterPackageType": "PK",
+      "NumberOfPackages": "20",
+      "Description": "Tea",
+      "GoodsGrossWeight": "32000",
+      "GoodsGrossWeightUom": "KGM",
+      "CustomsStatus": "T1",
+      "RelatedEquipmentInfo": [
+        {
+          "ContainerNumber": "CNPPI222003",
+          "EquipmentQuantity": "20"
+        }
+      ]
+    }
+  ],
+  "Status": {
+    "Value": "CUSCARCREATEDACCEPTED",
+    "Description": "The CUSCAR for this consignment was accepted by BE Customs."
+  }
+}
