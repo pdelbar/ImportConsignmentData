@@ -26,7 +26,7 @@ Two examples have been provided:
 ### Overall structure
 
 ```
-<ConsignmentInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ImportConsignmentData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <Disclaimer>Response format subject to change</Disclaimer>
     <References> ... </References>
     <Measurements> ... </Measurements>
@@ -35,7 +35,7 @@ Two examples have been provided:
     <EquipmentInformation> ... </EquipmentInformation>
     <Goods> ... </Goods>
     <Status> ... </Status>
-</ConsignmentInfo>
+</ImportConsignmentData>
 ```
 
 ### References
@@ -257,3 +257,5 @@ This status is the result of the pairing of the CUSCAR (submitted to customs) wi
 </Status>
 ```
  
+ 
+Read next: [Sample data](../data/samples.md)

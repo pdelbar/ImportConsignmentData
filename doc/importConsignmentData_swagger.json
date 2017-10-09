@@ -1,0 +1,416 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "NxtPort Consigment API - sandbox edition",
+    "description": "The ConsignmentInfo API provides access to the customs status of consignments submitted to customs using a CUSCAR message.",
+    "termsOfService": "http://nxtport.eu/"
+  },
+  "basePath": "/",
+  "paths": {
+    "/v1/bl/{bl}/stay/{stay}": {
+      "get": {
+        "tags": [
+          "Info"
+        ],
+        "summary": "Retrieve Consignment information",
+        "operationId": "V1BlByBlStayByStayGet",
+        "consumes": [],
+        "produces": [
+          "application/xml",
+          "text/xml",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "bl",
+            "in": "path",
+            "description": "A reference to a bill of lading (B/L)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "stay",
+            "in": "path",
+            "description": "A reference to a stay number",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ImportConsignmentData"
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/v1/bl/{bl}/cn/{cn}": {
+      "get": {
+        "tags": [
+          "Info"
+        ],
+        "summary": "Retrieve Consignment information",
+        "operationId": "V1BlByBlCnByCnGet",
+        "consumes": [],
+        "produces": [
+          "application/xml",
+          "text/xml",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "bl",
+            "in": "path",
+            "description": "A reference to a bill of lading (B/L)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cn",
+            "in": "path",
+            "description": "A reference to a container number",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ImportConsignmentData"
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/v1/bl/{bl}/agent/{agent}": {
+      "get": {
+        "tags": [
+          "Info"
+        ],
+        "summary": "Retrieve Consignment information",
+        "operationId": "V1BlByBlAgentByAgentGet",
+        "consumes": [],
+        "produces": [
+          "application/xml",
+          "text/xml",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "bl",
+            "in": "path",
+            "description": "A reference to a bill of lading (B/L)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "agent",
+            "in": "path",
+            "description": "A reference to an agent",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ImportConsignmentData"
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ImportConsignmentData": {
+      "type": "object",
+      "properties": {
+        "disclaimer": {
+          "type": "string"
+        },
+        "references": {
+          "$ref": "#/definitions/References"
+        },
+        "measurements": {
+          "$ref": "#/definitions/Measurements"
+        },
+        "parties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Party"
+          }
+        },
+        "locations": {
+          "$ref": "#/definitions/Locations"
+        },
+        "equipmentInformation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Equipment"
+          }
+        },
+        "goods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Good"
+          }
+        },
+        "status": {
+          "$ref": "#/definitions/Status"
+        }
+      }
+    },
+    "References": {
+      "type": "object",
+      "properties": {
+        "stayNumber": {
+          "type": "string"
+        },
+        "billOfLadingId": {
+          "type": "string"
+        },
+        "imoNumber": {
+          "type": "string"
+        },
+        "filingAgentCode": {
+          "type": "string"
+        },
+        "sequenceNumber": {
+          "type": "string"
+        },
+        "parentDocument": {
+          "$ref": "#/definitions/ParentDocument"
+        }
+      }
+    },
+    "Measurements": {
+      "type": "object",
+      "properties": {
+        "totalQuantity": {
+          "type": "string"
+        },
+        "totalQuantityUom": {
+          "type": "string"
+        },
+        "totalWeight": {
+          "type": "string"
+        },
+        "totalWeightUom": {
+          "type": "string"
+        },
+        "overshippedQuantity": {
+          "type": "string"
+        }
+      }
+    },
+    "Party": {
+      "type": "object",
+      "properties": {
+        "partyTypeCode": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "scac": {
+          "type": "string"
+        },
+        "eori": {
+          "type": "string"
+        },
+        "streetAndNumber": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "string"
+        },
+        "place": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "unstructuredAddress": {
+          "type": "string"
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Contact"
+          }
+        }
+      }
+    },
+    "Locations": {
+      "type": "object",
+      "properties": {
+        "placeOfOrigin": {
+          "type": "string"
+        },
+        "placeOfDestination": {
+          "type": "string"
+        },
+        "placeOfLoading": {
+          "type": "string"
+        },
+        "placeOfDischarge": {
+          "type": "string"
+        },
+        "warehouse": {
+          "type": "string"
+        }
+      }
+    },
+    "Equipment": {
+      "type": "object",
+      "properties": {
+        "equipmentType": {
+          "type": "string"
+        },
+        "containerNumber": {
+          "type": "string"
+        },
+        "sizeAndType": {
+          "type": "string"
+        },
+        "emptyFull": {
+          "type": "string"
+        },
+        "serviceCode1": {
+          "type": "string"
+        },
+        "serviceCode2": {
+          "type": "string"
+        },
+        "grossWeight": {
+          "type": "string"
+        },
+        "grossWeightUom": {
+          "type": "string"
+        },
+        "seals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Seal"
+          }
+        }
+      }
+    },
+    "Good": {
+      "type": "object",
+      "properties": {
+        "sequenceNumber": {
+          "type": "string"
+        },
+        "outerPackageType": {
+          "type": "string"
+        },
+        "numberOfPackages": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "goodsGrossWeight": {
+          "type": "string"
+        },
+        "goodsGrossWeightUom": {
+          "type": "string"
+        },
+        "customsStatus": {
+          "type": "string"
+        },
+        "relatedEquipmentInfo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedEquipment"
+          }
+        }
+      }
+    },
+    "Status": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "ParentDocument": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "senderId": {
+          "type": "string"
+        }
+      }
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "Seal": {
+      "type": "object",
+      "properties": {
+        "sealPartyTypeCode": {
+          "type": "string"
+        },
+        "number": {
+          "type": "string"
+        },
+        "conditionCode": {
+          "type": "string"
+        },
+        "sealType": {
+          "type": "string"
+        }
+      }
+    },
+    "RelatedEquipment": {
+      "type": "object",
+      "properties": {
+        "containerNumber": {
+          "type": "string"
+        },
+        "equipmentQuantity": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -13,3 +13,8 @@ In order to use this API, you will need to
 * [request structure](./requests.md)
 * [response structure](./responses.md)
 * [sandbox data](./data/samples.md)
+
+## Swagger
+
+A Swagger file is located [here](./importConsignmentData_swagger.json). You will need to use the appropriate host URL as indicated [here](./endpoints.md).
+

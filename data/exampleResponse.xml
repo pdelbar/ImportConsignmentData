@@ -1,4 +1,4 @@
-<ConsignmentInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ImportConsignmentData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <Disclaimer>Response format subject to change</Disclaimer>
     <References>
         <StayNumber>112233</StayNumber>
@@ -93,4 +93,4 @@
         <Value>CUSCARCREATEDACCEPTED</Value>
         <Description>The CUSCAR for this consignment was accepted by BE Customs.</Description>
     </Status>
-</ConsignmentInfo>
+</ImportConsignmentData>
